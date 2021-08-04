@@ -1,0 +1,64 @@
+<!-- ケンミル --> <!-- 神様最高 -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- メタ情報 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <!-- CSSファイルのリンクです。内部の場合は <style></style> に置き換えます。 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/mobile.css">
+        <!-- JSファイルのリンク。内部の場合はv<script></script> に置き換えます。 -->
+        <script defer src="assets/js/todos.js"></script>
+        <script defer src="assets/js/main.js"></script>
+        <!-- ファビコン -->
+        <link rel="shortcut icon" href="#">
+        <title>KenMil Todo</title>
+    </head>
+    <!-- アプリのマークアップ -->
+    <body>
+
+        <!-- ヘッダー -->
+        <header>
+            <form class="add-todo" action="#">
+                <input class="add-todo__txt" type="text" name="add-todo" placeholder="ex: Buy cookies for Milky.">
+                <input class="add-todo__btn" type="submit" value="Add Todo">
+            </form>
+        </header>
+        
+        <!-- メイン -->
+        <main>
+            <!-- Main Page -->
+            <div class="page">
+                <!-- <h2>Folders - Coming soon!</h2>
+                <section class="page__section"></section> -->
+                
+                <h2>Todo's</h2>
+                <section class="page__section --todos-page-section"></section>
+            </div>
+            <!-- Folder Page -->
+            <div class="page hidden">
+                <section class="page__section">
+                    
+                </section>
+            </div>
+            <!-- Trash Page -->
+            <div class="page hidden">
+                <section class="page__section">
+                    
+                </section>
+            </div>
+        </main>
+        
+        <!-- フッター -->
+        <footer>
+            <div class="footer__logo">
+                <h4>&copy; 2021</h4>
+                <img class="footer__img" src="assets/img/kenmil-logo_256x128.png" alt="KenMil Logo">
+            </div>
+        </footer>
+
+    </body>
+</html>
+<!-- HTMLの終わり。 -->

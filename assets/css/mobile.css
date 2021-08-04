@@ -1,0 +1,32 @@
+/* ケンミル */ /* 神様最高 */
+
+@media only screen and (max-width: 700px) {
+  header {
+    width: 100%;
+  }
+
+  .add-todo {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .todo {
+    width: calc(100% - 0.5rem);
+    min-height: 5rem;
+  }
+
+  .todo__options {
+    justify-content: flex-end;
+  }
+
+  .todo__msg {
+    overflow-y: none;
+  }
+
+  footer {
+    width: 100%;
+  }
+}

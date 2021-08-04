@@ -1,0 +1,239 @@
+/* ケンミル */ /* 神様最高 */
+
+:root {
+  /* color */
+  --color-kenmil-tree: #308944;
+  --color-white: #ffffff;
+  --color-gray: #808080;
+  --color-black: #181717;
+  --color-clear: #00000000;
+  --theme-color-01: #dbd56e;
+  --theme-color-02: #88ab75;
+  --theme-color-03: #2d5aad;
+  --theme-color-04: #7d7c84;
+  --theme-color-05: #de8f6e;
+  /* Padding */
+  --padding-default: 0.25rem;
+  /* Border */
+  --border-default: 1px solid #808080;
+  --border-radius-default: 15px;
+  /* Shadow */
+  --shadow-default: 4px 4px 4px #00000080;
+  /* Margin */
+  --margin-default: 0.25rem;
+  /* Width */
+  --max-width-default: 1000px;
+  /* Fonts */
+  --font-weight-default: bold;
+  --theme-font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--theme-font-family);
+  color: var(--color-black);
+  scrollbar-width: none; /* Firefox */
+  transition: 0.25s;
+}
+
+i {
+  pointer-events: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button:active,
+input[type="submit"]:active {
+  cursor: pointer;
+  background-color: var(--color-gray);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
+  height: 100vh;
+  color: var();
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: var(--padding-default);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-default);
+  width: 80%;
+  max-width: var(--max-width-default);
+  height: 3rem;
+}
+
+.add-todo {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.add-todo__txt {
+  flex: 1;
+  padding: 0 1rem;
+  border: var(--border-default);
+  border-radius: 50rem 0 0 50rem;
+  border-right: none;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: var(--font-weight-default);
+}
+
+.add-todo__btn {
+  border: var(--border-default);
+  border-radius: 0 50rem 50rem 0;
+  background-color: var(--theme-color-02);
+  width: 30%;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: var(--font-weight-default);
+  color: var(--color-white);
+}
+
+main {
+  padding: 4.25rem 0.25rem;
+  background-color: var(--theme-color-02);
+  width: 80%;
+  max-width: var(--max-width-default);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.page {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.page__section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-default);
+  border-radius: var(--border-radius-default);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-default);
+  margin: var(--margin-default);
+  width: calc(25% - 0.5rem);
+  min-height: 10rem;
+  max-height: 10rem;
+}
+
+.todo__options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-default);
+  margin: var(--margin-default);
+  height: 50%;
+}
+
+.todo__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-default);
+  border: none;
+  border-radius: 50%;
+  margin: var(--margin-default);
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.todo__btn i {
+  color: var(--color-white);
+}
+
+.--folder {
+  background-color: var(--theme-color-01);
+}
+
+.--edit {
+  background-color: var(--theme-color-03);
+}
+
+.--done {
+  background-color: var(--theme-color-02);
+}
+
+.--delete {
+  background-color: var(--theme-color-05);
+}
+
+.todo__msg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-default);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+  margin: var(--margin-default);
+  font-weight: var(--font-weight-default);
+  text-align: center;
+  overflow-y: scroll;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  padding: var(--padding-default);
+  border: none;
+  border-top: var(--border-default);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-default);
+  width: 80%;
+  max-width: var(--max-width-default);
+  height: 3rem;
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.footer__img {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hovers */
+@media (hover: hover) {
+  button:hover,
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--color-gray);
+  }
+}
