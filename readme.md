@@ -4,8 +4,6 @@ https://kennyneedsmilky.github.io/kenmil-todo-list
 
 ![KenMil Todo Banner](assets/img/KenMil_Todo_Banner.png"Kenmil")
 
-![KenMil Todo Banner](KenMil_Todo_Banner.png"Kenmil")
-
 ## About this App
 
 This is an app that is made by Kenneth and Miyuki Fullbright.
