@@ -46,7 +46,6 @@ function openModal(modalId, todoId = 0) {
         
         if (modalId == modal.getAttribute("data-modal-id") && modalId == 3) {
             modal.querySelector(".modal__btn.--danger").setAttribute("data-todo-id", todoId);
-            console.log(modal.querySelector(".modal__btn.--danger"));
         }
     })
 }
