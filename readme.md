@@ -2,7 +2,7 @@
 
 https://kennyneedsmilky.github.io/kenmil-todo-list
 
-![KenMil Todo Banner](assets/img/KenMil_Todo_Banner.png"Kenmil")
+![KenMil Todo Banner](/assets/img/KenMil_Todo_Banner.png)
 
 ## About this App
 
