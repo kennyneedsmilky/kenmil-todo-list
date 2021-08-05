@@ -50,27 +50,38 @@ function updatePages() {
     document.querySelectorAll(".todo").forEach(todo => {
         todo.addEventListener("click", e => {
             if (e.target.classList.contains("todo__btn")) {
+                // If Folder
+                if (e.target.classList.contains("--folder")) {
+                    console.log("The folder feature will be added in a future update.");
+                }
+                // If Edit
+                if (e.target.classList.contains("--edit")) {
+                    console.log("The edit feature will be added in a future update.");
+                }
+                // If Done
+                if (e.target.classList.contains("--done")) {
+                    toggleDoneTodo(todo.getAttribute("data-id"));
+                }
                 // If Delete
                 if (e.target.classList.contains("--delete")) {
                     deleteTodo(todo.getAttribute("data-id"));
                 }
             }
-            
         })
     });
 }
 
 // Render Todo
 function renderTodo( _id = 0, inFolderId = 0, isDone = false, msg = "Buy cookies for Milky.") {
-    todosPageSection.insertAdjacentHTML("beforeend", `
-    <div class="todo" data-id="${_id}">
+    todosPageSection.insertAdjacentHTML("afterbegin", `
+    <div class="todo ${isDone === true ? 'done' : ''}" data-id="${_id}">
         <div class="todo__options">
-            <button class="todo__btn --folder"><i class="fas fa-folder"></i></button>
-            <button class="todo__btn --edit"><i class="fas fa-pen"></i></button>
-            <button class="todo__btn --done"><i class="fas fa-check"></i></button>
+            <button class="todo__btn --folder ${isDone === true ? 'done' : ''}"><i class="fas fa-folder"></i></button>
+            <button class="todo__btn --edit ${isDone === true ? 'done' : ''}"><i class="fas fa-pen"></i></button>
+            <button class="todo__btn --done ${isDone === true ? 'done' : ''}"><i class="fas fa-check"></i></button>
             <button class="todo__btn --delete"><i class="fas fa-trash"></i></button>
         </div>
-        <p class="todo__msg">${msg}</p>
+        <p class="todo__msg ${isDone === true ? 'done' : ''}">${isDone === true ? '<s>' : ''}${msg}${isDone === true ? '</s>' : ''}</p>
     </div>
     `);
 }
@@ -87,11 +98,25 @@ function addItem(e) {
     }
 }
 
+// Toggle Done Todo
+function toggleDoneTodo( id ) {
+    // Filter out the item to get an object from it.
+    const currentTodo = todoList.filter(x => x._id == id)[0];
+    // Make sure the item is in the list. If so, toggle isDone.
+    if (currentTodo.isDone === true) {
+        currentTodo.isDone = false;
+    } else {
+        currentTodo.isDone = true;
+    }
+    setTodoListData();
+    updatePages();
+}
+
 // Delete Todo
 function deleteTodo( id ) {
     // Filter out the item to get an object from it.
     const currentTodo = todoList.filter(x => x._id == id)[0];
-    // Make sure the item is in the list.
+    // Make sure the item is in the list. If so, take it out of the list.
     if (todoList.indexOf(currentTodo) !== -1) todoList.splice(todoList.indexOf(currentTodo), 1);
     setTodoListData();
     updatePages();
