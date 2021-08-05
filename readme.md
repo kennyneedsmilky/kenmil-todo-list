@@ -1,8 +1,18 @@
 # Kenmil Todo Version 1.0.0
 
-https://kennyneedsmilky.github.io/kenmil-todo-list
+![KenMil Todo Banner](assets/img/KenMil_Todo_Banner.png)
 
-![KenMil Todo Banner](/assets/img/KenMil_Todo_Banner.png)
+## https://kennyneedsmilky.github.io/kenmil-todo-list
+
+#
+
+## Example Pictures
+
+![KenMil Todo Demo](assets/img/KenMil-Todo-Demo-001.gif)
+
+Interested? Try the live demo [here](https://kennyneedsmilky.github.io/kenmil-todo-list/)!
+
+#
 
 ## About this App
 
