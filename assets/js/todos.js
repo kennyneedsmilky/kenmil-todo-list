@@ -98,7 +98,7 @@ function changeTodoMsg(e) {
             // Filter out the item to get an object from it.
             const currentTodo = todoList.filter(x => x._id == modal.getAttribute("data-todo-id"))[0];
             // Change the currentTodo msg to the modal's textArea value.
-            currentTodo.msg = modal.querySelector("textArea").value;
+            if (modal.querySelector("textArea").value !== "") currentTodo.msg = modal.querySelector("textArea").value;
             closeModal(e);
             setTodoListData();
             updatePages();
