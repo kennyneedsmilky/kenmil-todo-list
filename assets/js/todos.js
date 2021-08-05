@@ -9,8 +9,11 @@ const todosPageSection = document.querySelector(".--todos-page-section");
 const todoList = [];
 
 /** Event Handlers */
+
+// Init
 init();
 
+// Add Todo Btn
 addTodoBtn.addEventListener("click", e => {
     addItem(e);
 })
@@ -50,22 +53,10 @@ function updatePages() {
     document.querySelectorAll(".todo").forEach(todo => {
         todo.addEventListener("click", e => {
             if (e.target.classList.contains("todo__btn")) {
-                // If Folder
-                if (e.target.classList.contains("--folder")) {
-                    console.log("The folder feature will be added in a future update.");
-                }
-                // If Edit
-                if (e.target.classList.contains("--edit")) {
-                    console.log("The edit feature will be added in a future update.");
-                }
-                // If Done
-                if (e.target.classList.contains("--done")) {
-                    toggleDoneTodo(todo.getAttribute("data-id"));
-                }
-                // If Delete
-                if (e.target.classList.contains("--delete")) {
-                    deleteTodo(todo.getAttribute("data-id"));
-                }
+                if (e.target.classList.contains("--folder")) openModal(2, 0);
+                if (e.target.classList.contains("--edit")) openModal(1, todo.getAttribute("data-id"));
+                if (e.target.classList.contains("--done")) toggleDoneTodo(todo.getAttribute("data-id"));
+                if (e.target.classList.contains("--delete")) openModal(3, todo.getAttribute("data-id"));
             }
         })
     });
@@ -98,6 +89,23 @@ function addItem(e) {
     }
 }
 
+// Change Todo Message.
+function changeTodoMsg(e) {
+    e.preventDefault();
+    // We need to get the modal that has the data-modal-id 1.
+    modals.forEach(modal => {
+        if (modal.getAttribute("data-modal-id") == 1) {
+            // Filter out the item to get an object from it.
+            const currentTodo = todoList.filter(x => x._id == modal.getAttribute("data-todo-id"))[0];
+            // Change the currentTodo msg to the modal's textArea value.
+            currentTodo.msg = modal.querySelector("textArea").value;
+            closeModal(e);
+            setTodoListData();
+            updatePages();
+        }
+    })
+}
+
 // Toggle Done Todo
 function toggleDoneTodo( id ) {
     // Filter out the item to get an object from it.
@@ -118,6 +126,7 @@ function deleteTodo( id ) {
     const currentTodo = todoList.filter(x => x._id == id)[0];
     // Make sure the item is in the list. If so, take it out of the list.
     if (todoList.indexOf(currentTodo) !== -1) todoList.splice(todoList.indexOf(currentTodo), 1);
+    closeModal();
     setTodoListData();
     updatePages();
 }

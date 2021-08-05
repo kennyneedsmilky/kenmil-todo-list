@@ -58,11 +58,60 @@
                 <img class="footer__img" src="assets/img/kenmil-logo_256x128.png" alt="KenMil Logo">
             </div>
         </footer>
-
+        
         <!-- 編集のモーデル　-->
-        <div class="modal">
-            
+        <div class="modal hidden" data-modal-id="1" data-todo-id="0">
+            <div class="modal__content">
+                <!-- タイトル -->
+                <div class="modal__title">
+                    <h2><i class="fas fa-pen"></i> Edit Todo</h2>
+                    <h2 class="modal__close-btn"><i class="fas fa-times-circle"></i></h2>
+                </div>
+                <!-- フォーム -->
+                <form class="modal__form" action="#">
+                    <!-- テキストフィールド -->
+                    <textarea class="modal__edit-field" name="editTodo" maxlength="100"></textarea>
+                    <button class="modal__change-btn">Change</button>
+                </form>
+            </div>
         </div>
+
+        <!-- フィーチャーのモーデル　-->
+        <div class="modal hidden" data-modal-id="2">
+            <div class="modal__content">
+                <!-- タイトル -->
+                <div class="modal__title">
+                    <h2><i class="fas fa-info"></i> Coming Soon</h2>
+                    <h2 class="modal__close-btn"><i class="fas fa-times-circle"></i></h2>
+                </div>
+                <!-- Modal Message -->
+                <div class="modal__msg">
+                    <h2>This feature will be coming in a future update.</h2>
+                </div>
+                <button class="modal__confirm-btn">Okay</button>
+            </div>
+        </div>
+
+        <!-- 削除のモーデル　-->
+        <div class="modal hidden" data-modal-id="3">
+            <div class="modal__content">
+                <!-- タイトル -->
+                <div class="modal__title">
+                    <h2><i class="fas fa-trash"></i> Erase Todo</h2>
+                    <h2 class="modal__close-btn"><i class="fas fa-times-circle"></i></h2>
+                </div>
+                <!-- Modal Message -->
+                <div class="modal__msg">
+                    <h2>Are you sure that you want to erase this todo?</h2>
+                </div>
+                <div class="modal__btns-section">
+                    <button class="modal__btn --danger" data-action="erase">Yes</button>
+                    <button class="modal__btn --success" data-action="cancel">No</button>
+                </div>
+                
+            </div>
+        </div>
+
     </body>
 </html>
 <!-- HTMLの終わり。 -->
